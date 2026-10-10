@@ -1,0 +1,17 @@
+---
+interface Props {
+  className?: string;
+}
+const { className = "text-ocean-300/10" } = Astro.props;
+---
+
+<svg
+  class={`absolute inset-x-0 bottom-0 h-24 w-full ${className}`}
+  viewBox="0 0 1440 120"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  <path
+    d="M0,64 C240,112 480,112 720,64 C960,16 1200,16 1440,64 L1440,120 L0,120 Z"
+    fill="currentColor"></path>
+</svg>

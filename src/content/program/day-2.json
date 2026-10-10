@@ -1,0 +1,78 @@
+{
+  "date": "2027-02-02",
+  "label": "Tuesday",
+  "slots": [
+    {
+      "time": "08:45",
+      "endTime": "09:00",
+      "title": "Welcome coffee",
+      "kind": "registration"
+    },
+    {
+      "time": "09:00",
+      "endTime": "10:30",
+      "title": "Hands-on session (part 1)",
+      "kind": "hands-on",
+      "people": "A. Barge, J. Le Sommer (2026 example)",
+      "description": "A two-stage hands-on session, e.g. on NEMO/AI hybrid modelling with the eophis software solution: technical setup on Tuesday, interactive demonstration on Wednesday. The 2027 topic will be announced."
+    },
+    {
+      "time": "10:30",
+      "endTime": "10:45",
+      "title": "Coffee break",
+      "kind": "break"
+    },
+    {
+      "time": "10:45",
+      "endTime": "11:30",
+      "title": "Plenary discussion: NEMO developments — work plan and outlook",
+      "kind": "discussion",
+      "people": "P. Mathiot, S. Masson, D. Iovino (2026 example)",
+      "description": "Representatives of the NEMO System Team and the NEMO Developer Committee provide an update on ongoing developments and future plans for the NEMO modelling framework, followed by an open discussion with the community."
+    },
+    {
+      "time": "11:30",
+      "endTime": "12:30",
+      "title": "Short talks IV",
+      "kind": "talks"
+    },
+    {
+      "time": "12:30",
+      "endTime": "14:00",
+      "title": "Lunch",
+      "kind": "break"
+    },
+    {
+      "time": "14:00",
+      "endTime": "15:30",
+      "title": "Poster session II",
+      "kind": "posters"
+    },
+    {
+      "time": "15:30",
+      "endTime": "15:50",
+      "title": "Coffee break",
+      "kind": "break"
+    },
+    {
+      "time": "15:50",
+      "endTime": "16:45",
+      "title": "Keynote talk: René Schubert — The ocean flows downhill near the seafloor and recirculates upward above",
+      "kind": "keynote",
+      "people": "GEOMAR Helmholtz Centre for Ocean Research Kiel, Germany (2026 example)"
+    },
+    {
+      "time": "16:45",
+      "endTime": "17:30",
+      "title": "Plenary wrap-up & announcements",
+      "kind": "other"
+    },
+    {
+      "time": "19:30",
+      "endTime": "22:30",
+      "title": "Workshop dinner (optional, on-site)",
+      "kind": "other",
+      "description": "Optional dinner for on-site participants — sign up during registration (details to be announced)."
+    }
+  ]
+}

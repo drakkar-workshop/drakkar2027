@@ -1,0 +1,77 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHeader from "../components/PageHeader.astro";
+import NoteBanner from "../components/NoteBanner.astro";
+import { getCollection } from "astro:content";
+
+const keynotes = (await getCollection("keynotes")).sort((a, b) => a.data.day - b.data.day);
+
+const dayLabel = (day: number) =>
+  day === 1 ? "Monday 1 Feb" : day === 2 ? "Tuesday 2 Feb" : "Wednesday 3 Feb";
+
+const initials = (name: string) =>
+  name
+    .split(/\s+/)
+    .map((word) => word[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+---
+
+<Base title="Keynote Speakers" description="Keynote speakers of the 2027 DRAKKAR Ocean Modelling Workshop.">
+  <PageHeader
+    title="Keynote Speakers"
+    subtitle="Each day, a young scientist presents recently published work in a 25&ndash;30 min keynote talk followed by 20 minutes of questions and answers."
+  />
+
+  <NoteBanner
+    text="The keynote speakers for 2027 will be announced in due course. The presentations below are the 2026 keynotes, shown to illustrate the format of the sessions."
+  />
+
+  <section class="mx-auto max-w-6xl space-y-6 px-4 py-12">
+    {
+      keynotes.map((k) => (
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md md:p-8">
+          <div class="flex flex-col gap-5 md:flex-row md:items-start">
+            <div class="flex items-center gap-4">
+              <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-ocean-600 to-teal-500 text-xl font-bold text-white">
+                {initials(k.data.speaker)}
+              </div>
+              <div class="md:hidden">
+                <h2 class="text-lg font-bold text-slate-900">{k.data.speaker}</h2>
+                <p class="text-sm text-slate-500">{k.data.affiliation}</p>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="hidden md:block">
+                <h2 class="text-lg font-bold text-slate-900">{k.data.speaker}</h2>
+                <p class="text-sm text-slate-500">{k.data.affiliation}</p>
+              </div>
+              <span class="mt-2 inline-block rounded-full bg-ocean-100 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-ocean-700">
+                {dayLabel(k.data.day)} &middot; {k.data.time}
+              </span>
+              <h3 class="mt-4 font-semibold text-ocean-800">{k.data.talkTitle}</h3>
+              <details class="mt-3 text-sm text-slate-600">
+                <summary class="cursor-pointer font-medium text-ocean-600 hover:text-ocean-800">
+                  Biography &amp; abstract
+                </summary>
+                <p class="mt-3 leading-relaxed"><span class="font-semibold text-slate-800">Bio. </span>{k.data.bio}</p>
+                <p class="mt-3 leading-relaxed"><span class="font-semibold text-slate-800">Abstract. </span>{k.data.abstract}</p>
+                {k.data.link && (
+                  <a
+                    href={k.data.link}
+                    target="_blank"
+                    rel="noopener"
+                    class="mt-3 inline-block font-medium text-ocean-600 hover:underline"
+                  >
+                    Related publication &rarr;
+                  </a>
+                )}
+              </details>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+</Base>

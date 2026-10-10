@@ -1,0 +1,155 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHeader from "../components/PageHeader.astro";
+import NoteBanner from "../components/NoteBanner.astro";
+import { SITE } from "../config";
+
+const registerHref = SITE.links.registration || "#";
+const paymentHref = "#";
+const hasRegisterLink = Boolean(SITE.links.registration);
+---
+
+<Base title="Practical Information" description="Venue, registration, payments and online access for the 2027 DRAKKAR Ocean Modelling Workshop.">
+  <PageHeader
+    title="Practical Information"
+    subtitle="Venue, registration, payments and online access."
+  />
+
+  <NoteBanner
+    text="Fees, deadlines and registration links shown below are indicative (2026 rules). The definitive 2027 procedure will be published here."
+  />
+
+  <section class="mx-auto max-w-6xl space-y-14 px-4 py-12">
+    <div>
+      <h2 class="text-xl font-bold tracking-tight text-ocean-900">1. Venue &amp; access</h2>
+      <div class="mt-4 grid gap-6 lg:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-bold text-ocean-800">IMAG Building</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            The 2027 DRAKKAR workshop will be held on the Grenoble campus:
+            <span class="font-semibold text-slate-800">IMAG Building, 700 Av. Centrale, 38400 Saint-Martin-d'H&egrave;res.</span>
+            The venue is a few minutes' walk from the &laquo;&nbsp;Biblioth&egrave;ques Universitaires&nbsp;&raquo; tram stop (line B).
+          </p>
+          <a
+            href={SITE.venue.mapsUrl}
+            target="_blank"
+            rel="noopener"
+            class="mt-4 inline-block rounded-full bg-ocean-600 px-4 py-2 text-xs font-bold text-white transition hover:bg-ocean-700"
+          >
+            Open in Google Maps
+          </a>
+        </div>
+        <iframe
+          class="h-72 w-full rounded-2xl border border-slate-200 shadow-sm lg:h-full"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=5.7168%2C45.1852%2C5.7368%2C45.1972&amp;layer=mapnik&amp;marker=45.1912%2C5.7268"
+          loading="lazy"
+          title="Map of the IMAG Building, Grenoble campus"></iframe>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold tracking-tight text-ocean-900">2. Online access</h2>
+      <div class="mt-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <p class="text-sm leading-relaxed text-slate-600">
+          Online access to selected sessions will be available for remote participants here:
+          <a
+            href={SITE.links.livestream}
+            target="_blank"
+            rel="noopener"
+            class="font-medium text-ocean-600 hover:underline"
+          >
+            videos.univ-grenoble-alpes.fr/live/events/
+          </a>.
+          Videoconference links will be made available to registered participants for live discussions.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold tracking-tight text-ocean-900">3. Registration &amp; payments</h2>
+      <div class="mt-4 grid gap-6 lg:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-bold text-ocean-800">Step 1 &mdash; Register</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            All remote and on-site attendees, with or without a scientific communication, are kindly asked to
+            register on the workshop website.
+          </p>
+          <a
+            href={registerHref}
+            class="mt-4 inline-block rounded-full bg-ocean-600 px-4 py-2 text-xs font-bold text-white transition hover:bg-ocean-700"
+          >
+            {hasRegisterLink ? "Go to registration" : "Link coming soon"}
+          </a>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-bold text-ocean-800">Step 2 &mdash; Pay fees</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            On-site attendees who do not work in Grenoble are kindly asked to pay their registration fees (and the
+            optional dinner) on the payment website.
+          </p>
+          <a
+            href={paymentHref}
+            class="mt-4 inline-block rounded-full bg-ocean-600 px-4 py-2 text-xs font-bold text-white transition hover:bg-ocean-700"
+          >
+            Payment site (coming soon)
+          </a>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-bold text-ocean-800">Indicative fees (2026)</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-slate-600">
+            <li class="flex justify-between"><span>1 day</span><span class="font-semibold text-slate-800">&euro; 87</span></li>
+            <li class="flex justify-between"><span>2 days</span><span class="font-semibold text-slate-800">&euro; 174</span></li>
+            <li class="flex justify-between"><span>3 days</span><span class="font-semibold text-slate-800">&euro; 261</span></li>
+            <li class="flex justify-between"><span>Workshop dinner (optional)</span><span class="font-semibold text-slate-800">&euro; 20</span></li>
+          </ul>
+          <p class="mt-3 text-xs text-slate-400">
+            Remote attendees, Grenoble-based colleagues without travel support, and keynote speakers are not
+            concerned by these payments (2026 rules).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold tracking-tight text-ocean-900">4. Getting to Grenoble</h2>
+      <div class="mt-4 grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-bold text-ocean-800">By train</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            High-speed trains connect Paris to Grenoble in about 3 hours, and Lyon or Geneva to Grenoble in
+            about 1.5 hours. The venue is a short tram ride from the railway station.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-bold text-ocean-800">By plane</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            The nearest airports are Lyon Saint-Exup&eacute;ry and Geneva, both with regular shuttle or bus
+            connections to Grenoble.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-bold text-ocean-800">Accommodation</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            A list of hotels near the venue and the city centre will be added here.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold tracking-tight text-ocean-900">5. Submit an abstract</h2>
+      <div class="mt-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <p class="text-sm leading-relaxed text-slate-600">
+          Contributions (posters or short talks) are submitted through a simple form. The submission link will be
+          published here when abstract submission opens.
+        </p>
+        <a
+          href="#"
+          class="mt-4 inline-block rounded-full bg-amber-400 px-4 py-2 text-xs font-bold text-ocean-950 transition hover:bg-amber-300"
+        >
+          Abstract submission (coming soon)
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

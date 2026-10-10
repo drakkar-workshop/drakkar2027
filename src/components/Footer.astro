@@ -1,0 +1,70 @@
+---
+import { SITE } from "../config";
+import { nav } from "../utils";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-20 bg-ocean-950 text-ocean-200">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-3">
+    <div>
+      <div class="flex items-center gap-2.5">
+        <svg class="h-9 w-9" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M32 12 L48 44 L16 44 Z" fill="#5aa9d6"></path>
+          <path
+            d="M10 50 q6 -6 12 0 t12 0 t12 0 t12 0"
+            stroke="#14b8a6"
+            stroke-width="5"
+            fill="none"
+            stroke-linecap="round"></path>
+        </svg>
+        <span class="text-lg font-bold text-white tracking-tight">
+          DRAKKAR <span class="text-ocean-300">2027</span>
+        </span>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed text-ocean-300">
+        Annual workshop of the DRAKKAR ocean modelling consortium, dedicated to the NEMO numerical
+        model and its applications to ocean and sea-ice variability.
+      </p>
+      <a
+        href="https://www.nemo-ocean.eu"
+        target="_blank"
+        rel="noopener"
+        class="mt-4 inline-block text-sm font-medium text-ocean-300 underline-offset-4 hover:text-white hover:underline"
+      >
+        nemo-ocean.eu
+      </a>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-widest text-white">Explore</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a class="hover:text-white" href={nav()}>Home</a></li>
+        <li><a class="hover:text-white" href={nav("program")}>Program</a></li>
+        <li><a class="hover:text-white" href={nav("keynotes")}>Keynote speakers</a></li>
+        <li><a class="hover:text-white" href={nav("posters")}>Posters</a></li>
+        <li><a class="hover:text-white" href={nav("practical")}>Practical information</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-widest text-white">Venue</h3>
+      <p class="mt-4 text-sm leading-relaxed">
+        {SITE.venue.name}<br />
+        {SITE.venue.address}
+      </p>
+      <p class="mt-4 text-sm">
+        <a
+          href={SITE.links.livestream}
+          target="_blank"
+          rel="noopener"
+          class="font-medium text-ocean-300 hover:text-white hover:underline"
+        >
+          Watch online (livestream)
+        </a>
+      </p>
+      <p class="mt-4 text-sm text-ocean-400">Contact: to be announced</p>
+    </div>
+  </div>
+  <div class="border-t border-ocean-800/60 py-5 text-center text-xs text-ocean-400">
+    &copy; {year} DRAKKAR Workshop organizers &middot; Hosted on GitHub Pages &middot; Built with Astro
+  </div>
+</footer>

@@ -1,0 +1,70 @@
+{
+  "date": "2027-02-03",
+  "label": "Wednesday",
+  "slots": [
+    {
+      "time": "08:45",
+      "endTime": "09:00",
+      "title": "Welcome coffee",
+      "kind": "registration"
+    },
+    {
+      "time": "09:00",
+      "endTime": "10:30",
+      "title": "Hands-on session (part 2)",
+      "kind": "hands-on",
+      "description": "Interactive demonstration continuing Tuesday's hands-on session."
+    },
+    {
+      "time": "10:30",
+      "endTime": "10:45",
+      "title": "Coffee break",
+      "kind": "break"
+    },
+    {
+      "time": "10:45",
+      "endTime": "11:30",
+      "title": "Plenary discussion: A NEMO analysis toolbox",
+      "kind": "discussion",
+      "people": "S. Griffies, C. Dufour (2026 example)",
+      "description": "This plenary session aims to discuss strategies for realizing an analysis code environment/toolbox for NEMO simulations: a suite of online and offline diagnostics facilitating scientific analysis and publications, and how to build a community of active users and developers of NEMO analysis code and use cases."
+    },
+    {
+      "time": "11:30",
+      "endTime": "12:30",
+      "title": "Short talks V",
+      "kind": "talks"
+    },
+    {
+      "time": "12:30",
+      "endTime": "14:00",
+      "title": "Lunch",
+      "kind": "break"
+    },
+    {
+      "time": "14:00",
+      "endTime": "15:30",
+      "title": "Poster session III",
+      "kind": "posters"
+    },
+    {
+      "time": "15:30",
+      "endTime": "15:50",
+      "title": "Coffee break",
+      "kind": "break"
+    },
+    {
+      "time": "15:50",
+      "endTime": "17:00",
+      "title": "Keynote talk: Jiarong Wu — Air-sea flux parameterization: a data-driven approach and its online realization",
+      "kind": "keynote",
+      "people": "Courant Institute of Mathematical Sciences, USA (2026 example)"
+    },
+    {
+      "time": "17:00",
+      "endTime": "17:45",
+      "title": "Closing session: discussion summaries & outlook",
+      "kind": "closing"
+    }
+  ]
+}

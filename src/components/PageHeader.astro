@@ -1,0 +1,21 @@
+---
+import Waves from "./Waves.astro";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+const { title, subtitle } = Astro.props;
+---
+
+<section
+  class="relative overflow-hidden bg-gradient-to-br from-ocean-950 via-ocean-800 to-ocean-600 text-white"
+>
+  <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-ocean-400/20 blur-3xl">
+  </div>
+  <div class="relative mx-auto max-w-6xl px-4 pb-24 pt-14 md:pt-16">
+    <h1 class="text-3xl font-extrabold tracking-tight md:text-5xl">{title}</h1>
+    {subtitle && <p class="mt-4 max-w-2xl text-lg text-ocean-100">{subtitle}</p>}
+  </div>
+  <Waves className="text-ocean-50" />
+</section>

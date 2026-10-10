@@ -1,0 +1,101 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHeader from "../components/PageHeader.astro";
+import NoteBanner from "../components/NoteBanner.astro";
+import { getCollection } from "astro:content";
+
+const posters = (await getCollection("posters")).sort(
+  (a, b) => a.data.day - b.data.day || a.data.number.localeCompare(b.data.number)
+);
+---
+
+<Base title="List of Posters" description="Posters presented during the daily poster sessions of the 2027 DRAKKAR Ocean Modelling Workshop.">
+  <PageHeader
+    title="List of Posters"
+    subtitle="The ordered list of all posters presented during each daily poster session."
+  />
+
+  <NoteBanner
+    text="Sample list for demonstration purposes only. The 2027 poster list will be published here after the abstract selection."
+  />
+
+  <section class="mx-auto max-w-6xl px-4 pt-10">
+    <div class="rounded-2xl border border-ocean-100 bg-white p-5 text-sm leading-relaxed text-slate-600">
+      <span class="font-semibold text-ocean-900">Poster format: A0, portrait orientation.</span> On-site presenters
+      install their poster in the morning of their session day and remove it in the same evening. Posters from
+      remote participants are shared as PDFs with registered participants for virtual Q&amp;A.
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <div id="poster-filters" class="flex flex-wrap gap-2">
+      <button
+        data-filter="all"
+        class="rounded-full border border-ocean-700 bg-ocean-700 px-4 py-1.5 text-sm font-semibold text-white transition"
+      >
+        All
+      </button>
+      <button
+        data-filter="1"
+        class="rounded-full border border-ocean-200 bg-white px-4 py-1.5 text-sm font-semibold text-ocean-700 transition hover:border-ocean-400"
+      >
+        Day 1 &mdash; Monday
+      </button>
+      <button
+        data-filter="2"
+        class="rounded-full border border-ocean-200 bg-white px-4 py-1.5 text-sm font-semibold text-ocean-700 transition hover:border-ocean-400"
+      >
+        Day 2 &mdash; Tuesday
+      </button>
+      <button
+        data-filter="3"
+        class="rounded-full border border-ocean-200 bg-white px-4 py-1.5 text-sm font-semibold text-ocean-700 transition hover:border-ocean-400"
+      >
+        Day 3 &mdash; Wednesday
+      </button>
+    </div>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-2">
+      {
+        posters.map((p) => (
+          <article data-day={p.data.day} class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ocean-600 text-sm font-bold text-white">
+              {p.data.number}
+            </div>
+            <div class="min-w-0 flex-1">
+              <h2 class="font-semibold leading-snug text-slate-900">{p.data.title}</h2>
+              <p class="mt-1 text-sm text-slate-600">{p.data.authors}</p>
+              <p class="text-xs text-slate-400">{p.data.affiliation}</p>
+            </div>
+            <span class="self-start rounded-full bg-ocean-100 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-ocean-700">
+              Day {p.data.day}
+            </span>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Base>
+
+<script>
+  const filters = document.querySelectorAll<HTMLButtonElement>("#poster-filters button");
+  const cards = document.querySelectorAll<HTMLElement>("[data-day]");
+
+  const activeClasses = ["bg-ocean-700", "text-white", "border-ocean-700"];
+  const inactiveClasses = ["bg-white", "text-ocean-700", "border-ocean-200"];
+
+  filters.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      filters.forEach((other) => {
+        other.classList.remove(...activeClasses);
+        other.classList.add(...inactiveClasses);
+      });
+      button.classList.remove(...inactiveClasses);
+      button.classList.add(...activeClasses);
+      cards.forEach((card) => {
+        card.classList.toggle("hidden", filter !== "all" && card.dataset.day !== filter);
+      });
+    });
+  });
+</script>

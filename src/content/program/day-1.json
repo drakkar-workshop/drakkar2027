@@ -1,0 +1,85 @@
+{
+  "date": "2027-02-01",
+  "label": "Monday",
+  "slots": [
+    {
+      "time": "08:30",
+      "endTime": "09:00",
+      "title": "Registration & welcome coffee",
+      "kind": "registration"
+    },
+    {
+      "time": "09:00",
+      "endTime": "09:15",
+      "title": "Welcome & opening remarks",
+      "kind": "welcome"
+    },
+    {
+      "time": "09:15",
+      "endTime": "10:30",
+      "title": "Short talks I",
+      "kind": "talks",
+      "description": "A series of ~5-minute talks introducing the posters of the day, followed by a 20-minute Q&A slot."
+    },
+    {
+      "time": "10:30",
+      "endTime": "10:45",
+      "title": "Coffee break",
+      "kind": "break"
+    },
+    {
+      "time": "10:45",
+      "endTime": "11:30",
+      "title": "Plenary discussion: How to explain, possibly mitigate, and live with model drift?",
+      "kind": "discussion",
+      "people": "Chairs: T. Penduff, S. Griffies (2026 example)",
+      "description": "Most ocean and climate model simulations using unassimilated primitive equation models exhibit spurious trends, also called numerical drifts. These spurious trends bias the final state of simulations and can hinder numerical studies of low-frequency variability and geophysical trends. This session will discuss the possible origins and consequences of these spurious trends, accepted practices for reducing them when possible, or for living with them."
+    },
+    {
+      "time": "11:30",
+      "endTime": "12:30",
+      "title": "Short talks II",
+      "kind": "talks",
+      "description": "~5-minute talks introducing posters of the day, followed by Q&A."
+    },
+    {
+      "time": "12:30",
+      "endTime": "14:00",
+      "title": "Lunch",
+      "kind": "break"
+    },
+    {
+      "time": "14:00",
+      "endTime": "15:30",
+      "title": "Poster session I",
+      "kind": "posters",
+      "description": "Posters on display for the whole day; presenters introduce their work during the morning short talks."
+    },
+    {
+      "time": "15:30",
+      "endTime": "15:50",
+      "title": "Coffee break",
+      "kind": "break"
+    },
+    {
+      "time": "15:50",
+      "endTime": "16:45",
+      "title": "Keynote talk: Neil Fraser — Vertical velocity dynamics in the North Atlantic and implications for AMOC",
+      "kind": "keynote",
+      "people": "Scottish Association for Marine Science, UK (2026 example)"
+    },
+    {
+      "time": "16:45",
+      "endTime": "17:30",
+      "title": "Short talks III & plenary wrap-up",
+      "kind": "talks"
+    },
+    {
+      "time": "17:30",
+      "endTime": "19:00",
+      "title": "Icebreaker",
+      "kind": "other",
+      "description": "Drinks and bites at the venue — all on-site participants welcome."
+    }
+  ]
+}

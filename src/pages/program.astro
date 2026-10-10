@@ -1,0 +1,125 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHeader from "../components/PageHeader.astro";
+import NoteBanner from "../components/NoteBanner.astro";
+import { SITE } from "../config";
+import { getCollection } from "astro:content";
+import { nav } from "../utils";
+
+const days = (await getCollection("program")).sort((a, b) => a.data.date.localeCompare(b.data.date));
+
+const kindStyles: Record<string, { chip: string; label: string }> = {
+  registration: { chip: "bg-slate-100 text-slate-600", label: "Registration" },
+  welcome: { chip: "bg-ocean-100 text-ocean-800", label: "Welcome" },
+  talks: { chip: "bg-sky-100 text-sky-800", label: "Short talks" },
+  discussion: { chip: "bg-teal-100 text-teal-800", label: "Plenary discussion" },
+  keynote: { chip: "bg-amber-100 text-amber-900", label: "Keynote" },
+  posters: { chip: "bg-indigo-100 text-indigo-800", label: "Posters" },
+  break: { chip: "bg-stone-100 text-stone-600", label: "Break" },
+  "hands-on": { chip: "bg-emerald-100 text-emerald-800", label: "Hands-on" },
+  closing: { chip: "bg-ocean-100 text-ocean-800", label: "Closing" },
+  other: { chip: "bg-slate-100 text-slate-600", label: "Session" },
+};
+
+const prettyDate = (iso: string) =>
+  new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+---
+
+<Base title="Program" description="Agenda of the 2027 DRAKKAR Ocean Modelling Workshop: short talks, posters, plenary discussions, hands-on sessions and keynotes.">
+  <PageHeader
+    title="Workshop Agenda & Sessions"
+    subtitle="Three days of short talks, poster sessions, plenary discussions, hands-on sessions and keynote talks."
+  />
+
+  <NoteBanner
+    text="This agenda is an illustrative draft based on the 2026 edition. Session themes, chairs and timings for 2027 will be confirmed and published here."
+  />
+
+  <section class="mx-auto max-w-6xl px-4 pt-10">
+    <div class="flex flex-wrap gap-2">
+      {
+        days.map((day) => (
+          <a
+            href={`#${day.id}`}
+            class="rounded-full border border-ocean-200 bg-white px-4 py-2 text-sm font-semibold text-ocean-700 transition hover:border-ocean-400 hover:bg-ocean-100"
+          >
+            {day.data.label} {new Date(`${day.data.date}T00:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}
+          </a>
+        ))
+      }
+    </div>
+    <div class="mt-6 flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wide">
+      {
+        ["talks", "discussion", "keynote", "posters", "hands-on"].map((kind) => (
+          <span class={`rounded-full px-3 py-1 ${kindStyles[kind].chip}`}>{kindStyles[kind].label}</span>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl space-y-14 px-4 py-12">
+    {
+      days.map((day) => (
+        <section id={day.id} class="scroll-mt-24">
+          <div class="flex flex-wrap items-baseline justify-between gap-2 border-b border-ocean-100 pb-3">
+            <h2 class="text-2xl font-bold tracking-tight text-ocean-900">{day.data.label}</h2>
+            <span class="text-sm text-slate-500">{prettyDate(day.data.date)}</span>
+          </div>
+          <div class="mt-5 space-y-3">
+            {day.data.slots.map((slot) => (
+              <div class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+                <div class="w-24 shrink-0 text-right">
+                  <div class="text-sm font-bold text-ocean-700">{slot.time}</div>
+                  {slot.endTime && <div class="text-xs text-slate-400">&rarr; {slot.endTime}</div>}
+                </div>
+                <div class="flex-1 border-l-4 border-ocean-100 pl-4">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class={`rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide ${kindStyles[slot.kind]?.chip ?? kindStyles.other.chip}`}>
+                      {kindStyles[slot.kind]?.label ?? "Session"}
+                    </span>
+                    <h3 class="font-semibold text-slate-900">{slot.title}</h3>
+                  </div>
+                  {slot.people && <p class="mt-1 text-sm text-slate-500">{slot.people}</p>}
+                  {slot.description && (
+                    <details class="mt-2 text-sm text-slate-600">
+                      <summary class="cursor-pointer font-medium text-ocean-600 hover:text-ocean-800">Details</summary>
+                      <p class="mt-2 leading-relaxed">{slot.description}</p>
+                    </details>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-8">
+    <div class="grid gap-4 md:grid-cols-2">
+      <div class="rounded-2xl border border-ocean-100 bg-white p-6">
+        <h3 class="font-bold text-ocean-900">Workshop material</h3>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+          The book of abstracts, all posters and most workshop material will be collected and shared from this
+          page before and during the event.
+        </p>
+        <p class="mt-3 text-xs text-ocean-500">Link to be announced.</p>
+      </div>
+      <div class="rounded-2xl border border-ocean-100 bg-white p-6">
+        <h3 class="font-bold text-ocean-900">Poster format &amp; workflow</h3>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+          Posters are A0 in portrait orientation. On-site presenters install their poster in the morning of their
+          session day and remove it in the evening. Short talks (~5 min) introduce each day's posters.
+        </p>
+        <p class="mt-3 text-xs text-ocean-500">
+          Poster list: <a class="font-semibold underline-offset-2 hover:underline" href={nav("posters")}>see the posters page</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

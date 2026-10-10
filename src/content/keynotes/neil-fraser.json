@@ -1,0 +1,10 @@
+{
+  "day": 1,
+  "time": "15:50",
+  "speaker": "Neil Fraser",
+  "affiliation": "Scottish Association for Marine Science, UK",
+  "bio": "Neil Fraser is a Lecturer in Physical Oceanography. His research focuses on observing and understanding the Atlantic Meridional Overturning Circulation (AMOC), its underlying dynamics, and its role in climate variability and change. He is heavily involved in sustained observations of the subpolar North Atlantic, contributing to major international and national observing programmes (e.g. OSNAP). His work combines observational and analytical approaches to study large-scale circulation and boundary current dynamics, and the development and deployment of novel ocean observing systems, integrating moored and autonomous platforms.",
+  "talkTitle": "Vertical velocity dynamics in the North Atlantic and implications for AMOC",
+  "abstract": "The Atlantic meridional overturning circulation (MOC) is traditionally monitored in terms of zonally integrated transport in depth or density space. The divergence of these two metrics at high latitudes indicates that vertical and diapycnal volume transports are neither instantaneously nor locally coupled. Here, we develop a new analytical decomposition of vertical volume transport based on the vorticity budget, highlighting the roles of relative vorticity advection for the sinking of overflow water at the northern subpolar boundaries and of the geostrophic beta effect for the sinking of dense waters in the intergyre region. We find that vertical transport associated with surface Ekman pumping dominates observed MOC variability, and that the resulting adiabatic isopycnal heave largely explains the lack of meridional coherence in the observed AMOC.",
+  "link": "https://doi.org/10.1175/JPO-D-23-0229.1"
+}
