@@ -27,14 +27,13 @@ export const SCIENTIFIC_COMMITTEE = [
   { name: "Thierry Penduff", affiliation: "IGE, Grenoble" },
   { name: "Julien Le Sommer", affiliation: "IGE, Grenoble" },
   { name: "Carolina Dufour", affiliation: "LOPS, Brest" },
-  { name: "Anne Marie Treguier", affiliation: "LOPS, Brest" },
+  { name: "Anne-Marie Treguier", affiliation: "LOPS, Brest" },
   { name: "Arne Biastoch", affiliation: "GEOMAR, Kiel" },
-  { name: "Joel Hirschi", affiliation: "NOCS, Southampton" },
-  { name: "Romain Bourdall\u00e9-Badie", affiliation: "MOI, Toulouse" },
+  { name: "Romain Bourdallé-Badie", affiliation: "MOI, Toulouse" },
   { name: "Paul Myers", affiliation: "Univ. Alberta, Edmonton" },
-  { name: "S\u00e9bastien Masson", affiliation: "LOCEAN, Paris" },
   { name: "Dave Storkey", affiliation: "UK Met Office, Exeter" },
-  { name: "Laurent Debreu", affiliation: "INRIA, Grenoble" },
+  { name: "Marta Mrozowska", affiliation: "Univ. Princeton, Princeton, USA" },
+  { name: "Benjamin Richaud", affiliation: "SHOM, Brest, France" },
 ];
 
 export const ORGANIZING_COMMITTEE = [
