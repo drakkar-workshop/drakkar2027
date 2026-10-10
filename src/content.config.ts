@@ -45,13 +45,14 @@ const keynotes = defineCollection({
 });
 
 const posters = defineCollection({
-  loader: glob({ pattern: "**/*.json", base: "./src/content/posters" }),
+  loader: glob({ pattern: "**/*.md", base: "./src/content/posters" }),
   schema: z.object({
     number: z.string(),
     day: z.number(),
     title: z.string(),
     authors: z.string(),
     affiliation: z.string(),
+    pdf: z.string().optional(),
   }),
 });
 

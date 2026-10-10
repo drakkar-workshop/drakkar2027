@@ -20,10 +20,12 @@ Then open http://localhost:4321/drakkar2027-worksop-website
 | Dates, venue, links, committees, intro text | `src/config.ts` |
 | Program (one file per day) | `src/content/program/*.json` |
 | Keynote speakers | `src/content/keynotes/*.json` |
-| Poster list | `src/content/posters/*.json` |
+| Poster list (one file per poster; abstract as the body) | `src/content/posters/*.md` |
 | Practical information | `src/pages/practical.astro` |
 
 Registration and abstract-submission links are set in `src/config.ts` (`SITE.links.registration` and `SITE.links.abstractSubmission`); while they are empty, the buttons show a "coming soon" state.
+
+Poster PDFs: set an optional `pdf` field in a poster's frontmatter (filename only) and place the corresponding file in `public/posters/` to show a download button on the poster page.
 
 ## Deploy to GitHub Pages
 

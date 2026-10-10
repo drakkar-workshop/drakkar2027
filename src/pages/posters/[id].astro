@@ -1,0 +1,115 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import { getCollection, render } from "astro:content";
+import { nav } from "../../utils";
+
+export async function getStaticPaths() {
+  const posters = (await getCollection("posters")).sort(
+    (a, b) => a.data.day - b.data.day || a.data.number.localeCompare(b.data.number)
+  );
+  return posters.map((entry, index) => ({
+    params: { id: entry.id },
+    props: {
+      entry,
+      prev: posters[index - 1] ?? null,
+      next: posters[index + 1] ?? null,
+    },
+  }));
+}
+
+const { entry, prev, next } = Astro.props;
+const { Content } = await render(entry);
+const dayLabel =
+  entry.data.day === 1
+    ? "Monday 1 February"
+    : entry.data.day === 2
+      ? "Tuesday 2 February"
+      : "Wednesday 3 February";
+---
+
+<Base title={`Poster ${entry.data.number}`} description={entry.data.title}>
+  <PageHeader title={`Poster ${entry.data.number}`} subtitle={entry.data.title} />
+
+  <section class="mx-auto max-w-3xl px-4 py-12">
+    <a
+      href={nav("posters")}
+      class="inline-flex items-center gap-1.5 text-sm font-semibold text-ocean-600 hover:text-ocean-800"
+    >
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+      </svg>
+      Back to the poster list
+    </a>
+
+    <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-ocean-600 text-sm font-bold text-white">
+          {entry.data.number}
+        </span>
+        <span class="rounded-full bg-ocean-100 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-ocean-700">
+          Poster session &middot; Day {entry.data.day} &mdash; {dayLabel}
+        </span>
+      </div>
+      <h2 class="mt-5 text-xl font-bold leading-snug text-slate-900">{entry.data.title}</h2>
+      <p class="mt-2 text-sm font-medium text-slate-700">{entry.data.authors}</p>
+      <p class="text-xs text-slate-400">{entry.data.affiliation}</p>
+      {
+        entry.data.pdf && (
+          <a
+            href={nav(`posters/${entry.data.pdf}`)}
+            download
+            class="mt-5 inline-flex items-center gap-2 rounded-full bg-amber-400 px-4 py-2 text-xs font-bold text-ocean-950 transition hover:bg-amber-300"
+          >
+            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+            </svg>
+            Download poster (PDF)
+          </a>
+        )
+      }
+      <div class="mt-6 border-t border-slate-100 pt-6">
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-ocean-600">Abstract</h3>
+        <div class="mt-4 leading-relaxed text-slate-700 [&_p]:my-4">
+          <Content />
+        </div>
+      </div>
+    </div>
+
+    <nav class="mt-8 flex items-stretch justify-between gap-4 text-sm">
+      {
+        prev ? (
+          <a
+            href={nav(`posters/${prev.id}`)}
+            class="group flex min-w-0 flex-1 flex-col rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-ocean-300 hover:shadow-sm"
+          >
+            <span class="text-xs font-semibold uppercase tracking-wide text-slate-400">&larr; Previous</span>
+            <span class="mt-1 truncate font-semibold text-ocean-700 group-hover:underline">
+              {prev.data.number} &middot; {prev.data.title}
+            </span>
+          </a>
+        ) : (
+          <span class="flex-1"></span>
+        )
+      }
+      {
+        next ? (
+          <a
+            href={nav(`posters/${next.id}`)}
+            class="group flex min-w-0 flex-1 flex-col items-end rounded-2xl border border-slate-200 bg-white p-4 text-right transition hover:border-ocean-300 hover:shadow-sm"
+          >
+            <span class="text-xs font-semibold uppercase tracking-wide text-slate-400">Next &rarr;</span>
+            <span class="mt-1 truncate font-semibold text-ocean-700 group-hover:underline">
+              {next.data.number} &middot; {next.data.title}
+            </span>
+          </a>
+        ) : (
+          <span class="flex-1"></span>
+        )
+      }
+    </nav>
+  </section>
+</Base>
