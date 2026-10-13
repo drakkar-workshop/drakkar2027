@@ -5,7 +5,7 @@ import NoteBanner from "../components/NoteBanner.astro";
 import { getCollection, render } from "astro:content";
 import { nav } from "../utils";
 
-const entries = (await getCollection("posters")).sort(
+const entries = (await getCollection("posters", ({ data }) => data.announced)).sort(
   (a, b) => a.data.day - b.data.day || a.data.number.localeCompare(b.data.number)
 );
 
@@ -27,7 +27,7 @@ const rendered = await Promise.all(
   />
 
   <NoteBanner
-    text="Sample list for demonstration purposes only. The 2027 poster list will be published here after the abstract selection."
+    text="The 2027 poster list will be published here after the abstract selection."
   />
 
   <section class="mx-auto max-w-6xl px-4 pt-10">
@@ -39,7 +39,9 @@ const rendered = await Promise.all(
   </section>
 
   <section class="mx-auto max-w-6xl px-4 py-10">
-    <div id="poster-filters" class="flex flex-wrap gap-2">
+    {
+      entries.length > 0 && (
+        <div id="poster-filters" class="flex flex-wrap gap-2">
       <button
         data-filter="all"
         class="rounded-full border border-ocean-700 bg-ocean-700 px-4 py-1.5 text-sm font-semibold text-white transition"
@@ -64,11 +66,19 @@ const rendered = await Promise.all(
       >
         Day 3 &mdash; Wednesday
       </button>
-    </div>
+        </div>
+      )
+    }
 
-    <div class="mt-8 grid gap-4 md:grid-cols-2">
-      {
-        rendered.map(({ entry, Content }) => (
+    {
+      entries.length === 0 ? (
+        <div class="rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center">
+          <p class="text-lg font-semibold text-slate-900">Poster list to be announced</p>
+          <p class="mt-2 text-sm text-slate-500">The list of posters will be published here after the abstract selection.</p>
+        </div>
+      ) : (
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          {rendered.map(({ entry, Content }) => (
           <article
             data-day={entry.data.day}
             class="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md"
@@ -116,9 +126,10 @@ const rendered = await Promise.all(
               )}
             </div>
           </article>
-        ))
-      }
-    </div>
+          ))}
+        </div>
+      )
+    }
   </section>
 </Base>
 

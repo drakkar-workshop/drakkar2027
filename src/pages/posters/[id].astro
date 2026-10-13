@@ -5,7 +5,7 @@ import { getCollection, render } from "astro:content";
 import { nav } from "../../utils";
 
 export async function getStaticPaths() {
-  const posters = (await getCollection("posters")).sort(
+  const posters = (await getCollection("posters", ({ data }) => data.announced)).sort(
     (a, b) => a.data.day - b.data.day || a.data.number.localeCompare(b.data.number)
   );
   return posters.map((entry, index) => ({
