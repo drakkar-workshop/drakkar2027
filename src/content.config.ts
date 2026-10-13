@@ -54,6 +54,7 @@ const posters = defineCollection({
     authors: z.string(),
     affiliation: z.string(),
     pdf: z.string().optional(),
+    announced: z.boolean().default(false),
   }),
 });
 
