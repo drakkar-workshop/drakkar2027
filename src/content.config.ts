@@ -15,6 +15,7 @@ const program = defineCollection({
           "registration",
           "welcome",
           "talks",
+          "qa",
           "discussion",
           "keynote",
           "posters",

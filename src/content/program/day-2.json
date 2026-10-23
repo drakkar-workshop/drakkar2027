@@ -3,71 +3,101 @@
   "label": "Tuesday",
   "slots": [
     {
-      "time": "08:45",
+      "time": "08:30",
       "endTime": "09:00",
       "title": "Welcome coffee",
       "kind": "registration"
     },
     {
       "time": "09:00",
-      "endTime": "10:30",
-      "title": "Hands-on session (part 1)",
-      "kind": "hands-on",
-      "people": "A. Barge, J. Le Sommer (2026 example)",
-      "description": "A two-stage hands-on session, e.g. on NEMO/AI hybrid modelling with the eophis software solution: technical setup on Tuesday, interactive demonstration on Wednesday. The 2027 topic will be announced."
-    },
-    {
-      "time": "10:30",
       "endTime": "10:45",
-      "title": "Coffee break",
-      "kind": "break"
+      "title": "Hands-on session",
+      "kind": "hands-on",
+      "description": "Topic to be announced."
     },
     {
       "time": "10:45",
       "endTime": "11:30",
-      "title": "Plenary discussion: NEMO developments — work plan and outlook",
-      "kind": "discussion",
-      "people": "P. Mathiot, S. Masson, D. Iovino (2026 example)",
-      "description": "Representatives of the NEMO System Team and the NEMO Developer Committee provide an update on ongoing developments and future plans for the NEMO modelling framework, followed by an open discussion with the community."
+      "title": "Plenary discussion (topic to be announced)",
+      "kind": "discussion"
     },
     {
       "time": "11:30",
+      "endTime": "12:00",
+      "title": "Coffee break",
+      "kind": "break"
+    },
+    {
+      "time": "12:00",
       "endTime": "12:30",
       "title": "Short talks IV",
-      "kind": "talks"
+      "kind": "talks",
+      "description": "A series of ~5-minute talks introducing the posters of the day."
     },
     {
       "time": "12:30",
+      "endTime": "12:50",
+      "title": "Questions & answers",
+      "kind": "qa"
+    },
+    {
+      "time": "12:50",
       "endTime": "14:00",
       "title": "Lunch",
       "kind": "break"
     },
     {
       "time": "14:00",
-      "endTime": "15:30",
-      "title": "Poster session II",
-      "kind": "posters"
+      "endTime": "14:30",
+      "title": "Short talks V",
+      "kind": "talks",
+      "description": "A series of ~5-minute talks introducing the posters of the day."
     },
     {
-      "time": "15:30",
-      "endTime": "15:50",
-      "title": "Coffee break",
-      "kind": "break"
+      "time": "14:30",
+      "endTime": "14:50",
+      "title": "Questions & answers",
+      "kind": "qa"
     },
     {
-      "time": "15:50",
-      "endTime": "16:45",
+      "time": "14:50",
+      "endTime": "15:20",
       "title": "Keynote talk (speaker to be announced)",
       "kind": "keynote"
     },
     {
-      "time": "16:45",
-      "endTime": "17:30",
-      "title": "Plenary wrap-up & announcements",
-      "kind": "other"
+      "time": "15:20",
+      "endTime": "15:40",
+      "title": "Questions & answers",
+      "kind": "qa"
     },
     {
-      "time": "19:30",
+      "time": "15:40",
+      "endTime": "16:10",
+      "title": "Coffee break",
+      "kind": "break"
+    },
+    {
+      "time": "16:10",
+      "endTime": "16:40",
+      "title": "Short talks VI",
+      "kind": "talks",
+      "description": "A series of ~5-minute talks introducing the posters of the day."
+    },
+    {
+      "time": "16:40",
+      "endTime": "17:00",
+      "title": "Questions & answers",
+      "kind": "qa"
+    },
+    {
+      "time": "17:00",
+      "endTime": "18:30",
+      "title": "Poster session II",
+      "kind": "posters"
+    },
+    {
+      "time": "19:00",
       "endTime": "22:30",
       "title": "Workshop dinner (optional, on-site)",
       "kind": "other",

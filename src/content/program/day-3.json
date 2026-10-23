@@ -3,65 +3,89 @@
   "label": "Wednesday",
   "slots": [
     {
-      "time": "08:45",
+      "time": "08:30",
       "endTime": "09:00",
       "title": "Welcome coffee",
       "kind": "registration"
     },
     {
       "time": "09:00",
-      "endTime": "10:30",
-      "title": "Hands-on session (part 2)",
-      "kind": "hands-on",
-      "description": "Interactive demonstration continuing Tuesday's hands-on session."
-    },
-    {
-      "time": "10:30",
       "endTime": "10:45",
-      "title": "Coffee break",
-      "kind": "break"
+      "title": "Hands-on session",
+      "kind": "hands-on",
+      "description": "Topic to be announced."
     },
     {
       "time": "10:45",
       "endTime": "11:30",
-      "title": "Plenary discussion: A NEMO analysis toolbox",
-      "kind": "discussion",
-      "people": "S. Griffies, C. Dufour (2026 example)",
-      "description": "This plenary session aims to discuss strategies for realizing an analysis code environment/toolbox for NEMO simulations: a suite of online and offline diagnostics facilitating scientific analysis and publications, and how to build a community of active users and developers of NEMO analysis code and use cases."
+      "title": "Plenary discussion (topic to be announced)",
+      "kind": "discussion"
     },
     {
       "time": "11:30",
+      "endTime": "12:00",
+      "title": "Coffee break",
+      "kind": "break"
+    },
+    {
+      "time": "12:00",
       "endTime": "12:30",
-      "title": "Short talks V",
-      "kind": "talks"
+      "title": "Short talks VII",
+      "kind": "talks",
+      "description": "A series of ~5-minute talks introducing the posters of the day."
     },
     {
       "time": "12:30",
+      "endTime": "12:50",
+      "title": "Questions & answers",
+      "kind": "qa"
+    },
+    {
+      "time": "12:50",
       "endTime": "14:00",
       "title": "Lunch",
       "kind": "break"
     },
     {
       "time": "14:00",
-      "endTime": "15:30",
+      "endTime": "14:30",
+      "title": "Short talks VIII",
+      "kind": "talks",
+      "description": "A series of ~5-minute talks introducing the posters of the day."
+    },
+    {
+      "time": "14:30",
+      "endTime": "14:50",
+      "title": "Questions & answers",
+      "kind": "qa"
+    },
+    {
+      "time": "14:50",
+      "endTime": "15:50",
       "title": "Poster session III",
       "kind": "posters"
     },
     {
-      "time": "15:30",
-      "endTime": "15:50",
+      "time": "15:50",
+      "endTime": "16:10",
       "title": "Coffee break",
       "kind": "break"
     },
     {
-      "time": "15:50",
-      "endTime": "17:00",
+      "time": "16:10",
+      "endTime": "16:40",
       "title": "Keynote talk (speaker to be announced)",
       "kind": "keynote"
     },
     {
+      "time": "16:40",
+      "endTime": "17:00",
+      "title": "Questions & answers",
+      "kind": "qa"
+    },
+    {
       "time": "17:00",
-      "endTime": "17:45",
+      "endTime": "17:15",
       "title": "Closing session: discussion summaries & outlook",
       "kind": "closing"
     }

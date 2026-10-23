@@ -12,6 +12,7 @@ const kindStyles: Record<string, { chip: string; label: string }> = {
   registration: { chip: "bg-slate-100 text-slate-600", label: "Registration" },
   welcome: { chip: "bg-ocean-100 text-ocean-800", label: "Welcome" },
   talks: { chip: "bg-sky-100 text-sky-800", label: "Short talks" },
+  qa: { chip: "bg-rose-100 text-rose-800", label: "Q&A" },
   discussion: { chip: "bg-teal-100 text-teal-800", label: "Plenary discussion" },
   keynote: { chip: "bg-amber-100 text-amber-900", label: "Keynote" },
   posters: { chip: "bg-indigo-100 text-indigo-800", label: "Posters" },
@@ -37,7 +38,7 @@ const prettyDate = (iso: string) =>
   />
 
   <NoteBanner
-    text="This agenda is an illustrative draft based on the 2026 edition. Session themes, chairs and timings for 2027 will be confirmed and published here."
+    text="This agenda is a preliminary draft. Session themes, chairs and timings will be confirmed and published here."
   />
 
   <section class="mx-auto max-w-6xl px-4 pt-10">
@@ -55,7 +56,7 @@ const prettyDate = (iso: string) =>
     </div>
     <div class="mt-6 flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wide">
       {
-        ["talks", "discussion", "keynote", "posters", "hands-on"].map((kind) => (
+        ["talks", "qa", "discussion", "keynote", "posters", "hands-on"].map((kind) => (
           <span class={`rounded-full px-3 py-1 ${kindStyles[kind].chip}`}>{kindStyles[kind].label}</span>
         ))
       }
