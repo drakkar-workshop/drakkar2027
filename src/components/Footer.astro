@@ -71,7 +71,15 @@ const year = new Date().getFullYear();
           YouTube: talks from previous editions
         </a>
       </p>
-      <p class="mt-4 text-sm text-ocean-400">Contact: to be announced</p>
+      <p class="mt-4 text-sm text-ocean-400">
+        Contact:
+        <a
+          href={`mailto:${SITE.contactEmail}`}
+          class="font-medium text-ocean-300 underline-offset-4 hover:text-white hover:underline"
+        >
+          {SITE.contactEmail}
+        </a>
+      </p>
     </div>
   </div>
   <div class="border-t border-ocean-800/60 py-5 text-center text-xs text-ocean-400">

@@ -11,6 +11,7 @@ export const SITE = {
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=IMAG%20Building%2C%20700%20Av.%20Centrale%2C%2038400%20Saint-Martin-d%27H%C3%A8res",
   },
+  contactEmail: "contact-drakkar-workshop@groupes.renater.fr",
   links: {
     registration: "",
     abstractSubmission: "",

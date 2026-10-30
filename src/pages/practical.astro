@@ -110,7 +110,11 @@ const hasRegisterLink = Boolean(SITE.links.registration);
               rel="noopener"
               class="underline-offset-2 hover:underline"
               >EGU definition</a
-            >; contact the organizers in case of doubt. The optional workshop dinner can be added when
+            >;
+            <a href={`mailto:${SITE.contactEmail}`} class="underline-offset-2 hover:underline"
+              >contact the organizers</a
+            >
+            in case of doubt. The optional workshop dinner can be added when
             registering.
           </p>
         </div>
