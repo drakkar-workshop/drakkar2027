@@ -19,8 +19,8 @@ export const SITE = {
     youtube: "https://www.youtube.com/@drakkar-workshop9474",
   },
   intro: [
-    "For twenty-five editions, the DRAKKAR workshop has been the meeting point of the international NEMO ocean-modelling community \u2014 scientists, developers and students sharing results, shaping new tools and preparing the next generation of ocean simulations.",
-    "The programme spans the full breadth of NEMO-based ocean and sea-ice modelling: understanding observed variability in relation to the climate system, exploiting synergies between observations and simulations, and exploring emerging methods for accurate simulation and analysis of the ocean.",
+    "For twenty-five editions, the DRAKKAR workshop has been a key meeting point of the international ocean-modelling community \u2014 historically rooted in the NEMO framework, it brings together scientists, developers and students to share results, shape new tools and prepare the next generation of ocean simulations.",
+    "While NEMO remains at the heart of the workshop, contributions based on any ocean or sea-ice modelling framework are welcome. The programme covers observed variability in relation to the climate system, synergies between observations and simulations, and emerging methods for accurate simulation and analysis of the ocean.",
   ],
 };
 
@@ -28,7 +28,7 @@ export const THEMES = [
   {
     title: "Ocean & sea-ice variability",
     description:
-      "Using NEMO to characterize and understand observed ocean and sea-ice variability in relation to the other components of the climate system.",
+      "Characterizing and understanding observed ocean and sea-ice variability in relation to the other components of the climate system.",
   },
   {
     title: "Observations & model synergies",
