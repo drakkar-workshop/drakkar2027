@@ -3,25 +3,25 @@
   "label": "Monday",
   "slots": [
     {
-      "time": "10:15",
-      "endTime": "10:45",
+      "time": "10:00",
+      "endTime": "10:30",
       "title": "Registration & welcome coffee",
       "kind": "registration"
     },
     {
-      "time": "10:45",
-      "endTime": "11:00",
+      "time": "10:30",
+      "endTime": "10:45",
       "title": "Welcome & opening remarks",
       "kind": "welcome"
     },
     {
-      "time": "11:00",
-      "endTime": "11:45",
+      "time": "10:45",
+      "endTime": "11:30",
       "title": "Plenary discussion (topic to be announced)",
       "kind": "discussion"
     },
     {
-      "time": "11:45",
+      "time": "11:30",
       "endTime": "12:00",
       "title": "Coffee break",
       "kind": "break"
