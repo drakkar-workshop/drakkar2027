@@ -28,16 +28,10 @@
     },
     {
       "time": "12:00",
-      "endTime": "12:30",
+      "endTime": "12:50",
       "title": "Short talks I",
       "kind": "talks",
-      "description": "A series of ~5-minute talks introducing the posters of the day."
-    },
-    {
-      "time": "12:30",
-      "endTime": "12:50",
-      "title": "Questions & answers",
-      "kind": "qa"
+      "description": "A series of ~5-minute talks introducing the posters of the day, followed by questions & answers."
     },
     {
       "time": "12:50",
@@ -47,28 +41,17 @@
     },
     {
       "time": "14:00",
-      "endTime": "14:30",
+      "endTime": "14:50",
       "title": "Short talks II",
       "kind": "talks",
-      "description": "A series of ~5-minute talks introducing the posters of the day."
-    },
-    {
-      "time": "14:30",
-      "endTime": "14:50",
-      "title": "Questions & answers",
-      "kind": "qa"
+      "description": "A series of ~5-minute talks introducing the posters of the day, followed by questions & answers."
     },
     {
       "time": "14:50",
-      "endTime": "15:20",
-      "title": "Keynote talk (speaker to be announced)",
-      "kind": "keynote"
-    },
-    {
-      "time": "15:20",
       "endTime": "15:40",
-      "title": "Questions & answers",
-      "kind": "qa"
+      "title": "Keynote talk (speaker to be announced)",
+      "kind": "keynote",
+      "description": "Keynote talk followed by questions & answers."
     },
     {
       "time": "15:40",
@@ -78,16 +61,10 @@
     },
     {
       "time": "16:10",
-      "endTime": "16:40",
+      "endTime": "17:00",
       "title": "Short talks III",
       "kind": "talks",
-      "description": "A series of ~5-minute talks introducing the posters of the day."
-    },
-    {
-      "time": "16:40",
-      "endTime": "17:00",
-      "title": "Questions & answers",
-      "kind": "qa"
+      "description": "A series of ~5-minute talks introducing the posters of the day, followed by questions & answers."
     },
     {
       "time": "17:00",
