@@ -19,10 +19,28 @@ export const SITE = {
     youtube: "https://www.youtube.com/@drakkar-workshop9474",
   },
   intro: [
-    "The 25th edition of the DRAKKAR Workshop will take place in Grenoble, France, from 1 to 3 February 2027. The event can be followed online upon registration, and registered participants will be able to participate via videoconference.",
-    "Submitted abstracts may concern the use of the NEMO numerical model to characterize and understand the observed ocean/sea-ice variability in relation with the other components of the climate system, to prepare spatial and in-situ observation systems, and to valorize the synergies between such observations and model simulations. Contributions may also concern the sensitivity of model results to parametric and physical choices, and the potential of recent or emerging methods and tools for the accurate simulation and analysis of the oceanic variability.",
+    "For twenty-five editions, the DRAKKAR workshop has been the meeting point of the international NEMO ocean-modelling community \u2014 scientists, developers and students sharing results, shaping new tools and preparing the next generation of ocean simulations.",
+    "The programme spans the full breadth of NEMO-based ocean and sea-ice modelling: understanding observed variability in relation to the climate system, exploiting synergies between observations and simulations, and exploring emerging methods for accurate simulation and analysis of the ocean.",
   ],
 };
+
+export const THEMES = [
+  {
+    title: "Ocean & sea-ice variability",
+    description:
+      "Using NEMO to characterize and understand observed ocean and sea-ice variability in relation to the other components of the climate system.",
+  },
+  {
+    title: "Observations & model synergies",
+    description:
+      "Preparing spatial and in-situ observation systems, and exploiting the synergies between such observations and model simulations.",
+  },
+  {
+    title: "Next-generation methods & tools",
+    description:
+      "Sensitivity of model results to parametric and physical choices, and the potential of recent or emerging methods for accurate simulation and analysis.",
+  },
+];
 
 export const SCIENTIFIC_COMMITTEE = [
   { name: "Thierry Penduff", affiliation: "IGE, Grenoble" },
