@@ -6,6 +6,8 @@ import { SITE } from "../config";
 
 const registerHref = SITE.links.registration || "#";
 const hasRegisterLink = Boolean(SITE.links.registration);
+const abstractHref = SITE.links.abstractSubmission || "#";
+const hasAbstractLink = Boolean(SITE.links.abstractSubmission);
 ---
 
 <Base title="Practical Information" description="Venue, registration, payments and online access for the 2027 DRAKKAR Ocean Modelling Workshop.">
@@ -15,7 +17,7 @@ const hasRegisterLink = Boolean(SITE.links.registration);
   />
 
   <NoteBanner
-    text="The definitive 2027 registration rates are shown below. Registration and payment will open on the Azur-Colloque website; the link will be published here."
+    text={`Abstract submission opens on ${SITE.abstractOpens} and closes on ${SITE.abstractDeadline}. Registration and payment will open on the Azur-Colloque website; the link will be published here.`}
   />
 
   <section class="mx-auto max-w-6xl space-y-14 px-4 py-12">
@@ -76,7 +78,24 @@ const hasRegisterLink = Boolean(SITE.links.registration);
     </div>
 
     <div>
-      <h2 class="text-xl font-bold tracking-tight text-ocean-900">3. Registration &amp; payments</h2>
+      <h2 class="text-xl font-bold tracking-tight text-ocean-900">3. Submit an abstract</h2>
+      <div class="mt-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <p class="text-sm leading-relaxed text-slate-600">
+          Contributions (posters or short talks) are submitted through a simple form. Abstract submission opens
+          on {SITE.abstractOpens} and closes on {SITE.abstractDeadline}; the link will be published here when
+          submission opens.
+        </p>
+        <a
+          href={abstractHref}
+          class="mt-4 inline-block rounded-full bg-amber-400 px-4 py-2 text-xs font-bold text-ocean-950 transition hover:bg-amber-300"
+        >
+          {hasAbstractLink ? "Submit an abstract" : "Abstract submission (coming soon)"}
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold tracking-tight text-ocean-900">4. Registration &amp; payments</h2>
       <div class="mt-4 grid gap-6 lg:grid-cols-2">
         <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h3 class="font-bold text-ocean-800">Register &amp; pay on Azur-Colloque</h3>
@@ -122,7 +141,7 @@ const hasRegisterLink = Boolean(SITE.links.registration);
     </div>
 
     <div>
-      <h2 class="text-xl font-bold tracking-tight text-ocean-900">4. Getting to Grenoble</h2>
+      <h2 class="text-xl font-bold tracking-tight text-ocean-900">5. Getting to Grenoble</h2>
       <div class="mt-4 grid gap-4 md:grid-cols-3">
         <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h3 class="font-bold text-ocean-800">By train</h3>
@@ -147,20 +166,5 @@ const hasRegisterLink = Boolean(SITE.links.registration);
       </div>
     </div>
 
-    <div>
-      <h2 class="text-xl font-bold tracking-tight text-ocean-900">5. Submit an abstract</h2>
-      <div class="mt-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <p class="text-sm leading-relaxed text-slate-600">
-          Contributions (posters or short talks) are submitted through a simple form. The submission link will be
-          published here when abstract submission opens.
-        </p>
-        <a
-          href="#"
-          class="mt-4 inline-block rounded-full bg-amber-400 px-4 py-2 text-xs font-bold text-ocean-950 transition hover:bg-amber-300"
-        >
-          Abstract submission (coming soon)
-        </a>
-      </div>
-    </div>
   </section>
 </Base>

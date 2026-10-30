@@ -49,20 +49,21 @@ const hasAbstractLink = Boolean(SITE.links.abstractSubmission);
     </div>
     <div class="mt-10 flex flex-wrap items-center gap-4">
       <a
-        href={registerHref}
-        class="rounded-full bg-amber-400 px-6 py-3 text-sm font-bold text-ocean-950 shadow-lg shadow-amber-400/30 transition hover:bg-amber-300"
-      >
-        {hasRegisterLink ? "Register now" : "Registration \u2014 opening soon"}
-      </a>
-      <a
         href={abstractHref}
-        class="rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+        class="rounded-full bg-amber-400 px-6 py-3 text-sm font-bold text-ocean-950 shadow-lg shadow-amber-400/30 transition hover:bg-amber-300"
       >
         {hasAbstractLink ? "Submit an abstract" : "Abstract submission \u2014 opening soon"}
       </a>
+      <a
+        href={registerHref}
+        class="rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+      >
+        {hasRegisterLink ? "Register now" : "Registration \u2014 opening soon"}
+      </a>
     </div>
     <p class="mt-3 text-sm text-ocean-300">
-      Registration and abstract submission links will be published here.
+      Abstract submission opens on {SITE.abstractOpens} and closes on {SITE.abstractDeadline}. Links will be
+      published here when they open.
     </p>
     <div id="countdown" class="mt-12">
       <p class="text-xs font-semibold uppercase tracking-widest text-ocean-300">Starts in</p>
