@@ -56,7 +56,6 @@ export const SCIENTIFIC_COMMITTEE = [
 ];
 
 export const ORGANIZING_COMMITTEE = [
-  { name: "Josiane Brasseur", affiliation: "IGE, Grenoble" },
   { name: "Thierry Penduff", affiliation: "IGE, Grenoble" },
   { name: "Julien Le Sommer", affiliation: "IGE, Grenoble" },
   { name: "Laurent Debreu", affiliation: "INRIA, Grenoble" },
