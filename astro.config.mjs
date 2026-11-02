@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://drakkar-workshop.github.io",
-  base: "/drakkar2027-workshop-website",
+  base: "/drakkar2027",
   vite: {
     plugins: [tailwindcss()],
   },
