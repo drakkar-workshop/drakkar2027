@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Then open http://localhost:4321/drakkar2027-worksop-website
+Then open http://localhost:4321/drakkar2027-workshop-website
 
 ## Where to edit content
 
@@ -31,6 +31,6 @@ Poster PDFs: set an optional `pdf` field in a poster's frontmatter (filename onl
 
 1. In the GitHub repository, go to **Settings -> Pages** and set **Source** to *GitHub Actions*.
 2. Push to `main`: the workflow in `.github/workflows/deploy.yml` builds and deploys the site.
-3. The site is served at `https://drakkar-workshop.github.io/drakkar2027-worksop-website/`.
+3. The site is served at `https://drakkar-workshop.github.io/drakkar2027-workshop-website/`.
 
 If the repository is renamed, update `site` and `base` in `astro.config.mjs` to match the new name.
