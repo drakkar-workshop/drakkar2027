@@ -17,7 +17,7 @@ const hasAbstractLink = Boolean(SITE.links.abstractSubmission);
   />
 
   <NoteBanner
-    text={`Abstract submission opens on ${SITE.abstractOpens} and closes on ${SITE.abstractDeadline}. Registration and payment will open on the Azur-Colloque website; the link will be published here.`}
+    text={`Abstract submission is open and closes on ${SITE.abstractDeadline}. Registration and payment will open on the Azur-Colloque website; the link will be published here.`}
   />
 
   <section class="mx-auto max-w-6xl space-y-14 px-4 py-12">
@@ -81,9 +81,8 @@ const hasAbstractLink = Boolean(SITE.links.abstractSubmission);
       <h2 class="text-xl font-bold tracking-tight text-ocean-900">3. Submit an abstract</h2>
       <div class="mt-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <p class="text-sm leading-relaxed text-slate-600">
-          Contributions (posters or short talks) are submitted through a simple form. Abstract submission opens
-          on {SITE.abstractOpens} and closes on {SITE.abstractDeadline}; the link will be published here when
-          submission opens.
+          Contributions (posters or short talks) are submitted through a simple form. Abstract submission closes
+          on {SITE.abstractDeadline}.
         </p>
         <a
           href={abstractHref}

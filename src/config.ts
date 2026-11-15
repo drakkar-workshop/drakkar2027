@@ -4,8 +4,7 @@ export const SITE = {
   edition: "25th edition",
   datesLabel: "1\u20133 February 2027",
   startDateISO: "2027-02-01T09:00:00+01:00",
-  abstractOpens: "6 November 2026",
-  abstractDeadline: "30 November 2026",
+  abstractDeadline: "4 December 2026",
   location: "IMAG Building, Grenoble, France",
   venue: {
     name: "IMAG Building",
@@ -16,7 +15,7 @@ export const SITE = {
   contactEmail: "contact-drakkar-workshop@groupes.renater.fr",
   links: {
     registration: "",
-    abstractSubmission: "",
+    abstractSubmission: "https://framaforms.org/submit-your-abstract-1794762748",
     livestream: "https://videos.univ-grenoble-alpes.fr/live/events/",
     material: "",
     youtube: "https://www.youtube.com/@drakkar-workshop9474",
