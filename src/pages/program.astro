@@ -29,7 +29,12 @@ const prettyDate = (iso: string) =>
     year: "numeric",
   });
 
-const bold = (text: string) => text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+const richText = (text: string) =>
+  text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
 const descriptionBlocks = (text: string) => {
   const blocks: { type: "paragraph" | "list"; items: string[] }[] = [];
@@ -111,11 +116,11 @@ const descriptionBlocks = (text: string) => {
                           block.type === "list" ? (
                             <ul class="list-disc space-y-1 pl-5">
                               {block.items.map((item) => (
-                                <li set:html={bold(item)} />
+                                <li set:html={richText(item)} />
                               ))}
                             </ul>
                           ) : (
-                            <p class="leading-relaxed" set:html={bold(block.items[0])} />
+                            <p class="leading-relaxed" set:html={richText(block.items[0])} />
                           )
                         )}
                       </div>
