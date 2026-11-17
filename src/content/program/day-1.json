@@ -17,8 +17,10 @@
     {
       "time": "10:45",
       "endTime": "11:30",
-      "title": "Plenary discussion (topic to be announced)",
-      "kind": "discussion"
+      "title": "Plenary discussion: News from NEMO",
+      "kind": "discussion",
+      "people": "Chairs: Katherine Hutchinson and Pierre Mathiot",
+      "description": "In this session, representatives of the NEMO System Team and the NEMO Developer Committee will provide an update on ongoing developments and future plans for the NEMO modelling framework, followed by an open discussion:\n- **2027 Work Plan Highlights:** Each year, the NEMO System Team and Working Group leaders (HPC, Sea Ice, Kernel, TOP, etc.) collaborate to define the community work plan. The 2027 plan will continue to advance NEMO's scientific and technical capabilities in line with its long-term development strategy. The main priorities and planned activities for 2027 will be presented and discussed.\n- **Shaping the Next NEMO Development Strategy:** 2028 will mark the beginning of a new five-year NEMO Development Strategy cycle. This is an opportunity to reflect on past achievements, identify emerging scientific and technical challenges, and define the priorities that will guide NEMO's future development. The session will introduce the NEMO strategy document and explore how the wider community can contribute to shaping its content.\n- **Open Q&A:** An open discussion will follow, providing participants with the opportunity to engage with members of the System Team and Working Groups, ask questions, and share feedback on NEMO's ongoing and future developments."
     },
     {
       "time": "11:30",

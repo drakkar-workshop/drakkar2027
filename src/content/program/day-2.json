@@ -11,15 +11,17 @@
     {
       "time": "09:00",
       "endTime": "10:45",
-      "title": "Hands-on session",
+      "title": "Hands-on session: Virtual Argo Fleet",
       "kind": "hands-on",
-      "description": "Topic to be announced."
+      "people": "Organizers: Kevin Balem and Guillaume Maze",
+      "description": "A hands-on session diving into VirtualFleet, a Python-based tool designed for simulating virtual Argo fleets. The session will explore how VirtualFleet works, how it is used now and what it could be used for. Through examples and interactive exercises, you will learn how to deploy and configure your virtual Argo floats, then try to design the best Argo network to resolve some observational challenges."
     },
     {
       "time": "10:45",
       "endTime": "11:30",
-      "title": "Plenary discussion (topic to be announced)",
-      "kind": "discussion"
+      "title": "Plenary discussion: Agentic AI for ocean modelling",
+      "kind": "discussion",
+      "people": "Chairs: Julien Le Sommer"
     },
     {
       "time": "11:30",

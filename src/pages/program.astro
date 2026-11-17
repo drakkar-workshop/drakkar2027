@@ -28,6 +28,24 @@ const prettyDate = (iso: string) =>
     month: "long",
     year: "numeric",
   });
+
+const bold = (text: string) => text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
+const descriptionBlocks = (text: string) => {
+  const blocks: { type: "paragraph" | "list"; items: string[] }[] = [];
+  for (const raw of text.split("\n")) {
+    const line = raw.trim();
+    if (!line) continue;
+    if (line.startsWith("- ")) {
+      const last = blocks[blocks.length - 1];
+      if (last?.type === "list") last.items.push(line.slice(2));
+      else blocks.push({ type: "list", items: [line.slice(2)] });
+    } else {
+      blocks.push({ type: "paragraph", items: [line] });
+    }
+  }
+  return blocks;
+};
 ---
 
 <Base title="Program" description="Agenda of the 2027 DRAKKAR Ocean Modelling Workshop: short talks, posters, plenary discussions, hands-on sessions and keynotes.">
@@ -88,7 +106,19 @@ const prettyDate = (iso: string) =>
                   {slot.description && (
                     <details class="mt-2 text-sm text-slate-600">
                       <summary class="cursor-pointer font-medium text-ocean-600 hover:text-ocean-800">Details</summary>
-                      <p class="mt-2 leading-relaxed">{slot.description}</p>
+                      <div class="mt-2 space-y-2">
+                        {descriptionBlocks(slot.description).map((block) =>
+                          block.type === "list" ? (
+                            <ul class="list-disc space-y-1 pl-5">
+                              {block.items.map((item) => (
+                                <li set:html={bold(item)} />
+                              ))}
+                            </ul>
+                          ) : (
+                            <p class="leading-relaxed" set:html={bold(block.items[0])} />
+                          )
+                        )}
+                      </div>
                     </details>
                   )}
                 </div>

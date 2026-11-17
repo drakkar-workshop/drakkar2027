@@ -11,15 +11,17 @@
     {
       "time": "09:00",
       "endTime": "10:45",
-      "title": "Hands-on session",
+      "title": "Hands-on session: NEMO cookbook",
       "kind": "hands-on",
-      "description": "Topic to be announced."
+      "people": "Organizer: Oliver Tooth",
+      "description": "Getting Started with NEMO Cookbook: Reproducible, Grid-Aware Analysis of NEMO Outputs. Session details will be announced."
     },
     {
       "time": "10:45",
       "endTime": "11:30",
-      "title": "Plenary discussion (topic to be announced)",
-      "kind": "discussion"
+      "title": "Plenary discussion: Ocean model forcing and spin-up strategies",
+      "kind": "discussion",
+      "people": "Chairs: Gokhan Danabasoglu and Anne-Marie Treguier"
     },
     {
       "time": "11:30",
