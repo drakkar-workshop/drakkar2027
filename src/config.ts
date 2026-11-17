@@ -4,7 +4,7 @@ export const SITE = {
   edition: "25th edition",
   datesLabel: "1\u20133 February 2027",
   startDateISO: "2027-02-01T09:00:00+01:00",
-  abstractDeadline: "4 December 2026",
+  abstractDeadline: "7 December 2026",
   location: "IMAG Building, Grenoble, France",
   venue: {
     name: "IMAG Building",
