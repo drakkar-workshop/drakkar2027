@@ -42,6 +42,8 @@ const keynotes = defineCollection({
     talkTitle: z.string().optional(),
     abstract: z.string().optional(),
     link: z.string().optional(),
+    relatedPapers: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
+    photo: z.string().optional(),
     announced: z.boolean().default(false),
   }),
 });

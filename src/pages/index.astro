@@ -144,10 +144,18 @@ const abstractHref = SITE.links.abstractSubmission || "#";
             <div class="grid gap-6 md:grid-cols-3">
               {announced.map((k) => (
                 <article class="rounded-2xl border border-slate-200 bg-ocean-50/60 p-6 transition hover:shadow-md">
-                  <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4">
+                  {k.data.photo ? (
+                    <img
+                      src={nav(`keynotes/${k.data.photo}`)}
+                      alt={k.data.speaker}
+                      class="h-14 w-14 shrink-0 rounded-full object-cover object-top"
+                    />
+                  ) : (
                     <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-ocean-600 to-teal-500 text-lg font-bold text-white">
                       {initials(k.data.speaker)}
                     </div>
+                  )}
                     <div>
                       <h3 class="font-bold text-slate-900">{k.data.speaker}</h3>
                       <p class="text-xs text-slate-500">{k.data.affiliation}</p>

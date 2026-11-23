@@ -3,6 +3,20 @@
   "time": "14:50",
   "speaker": "Charlotte Durand",
   "affiliation": "IGE, Grenoble, France",
+  "talkTitle": "Machine learning emulators for sea-ice prediction",
+  "abstract": "Neural network emulators can reproduce given dynamics at a much lower cost than physics-based models, and developments are now appearing for sea ice. In the past few years, a growing number of sea-ice emulators have been proposed for forecasting and for coupling with physical models and other emulated components. In this talk, I will give an overview of these developments and of the main challenges, such as stability, the choice of forcing and coupling to the rest of the Earth system. I will illustrate them with our own work: a deterministic sea-ice emulator based on a U-Net, trained on coupled sea ice-ocean simulations and intended for future coupling to an ocean model. A physics-informed loss enforces consistency between the sea-ice variables. We tested the emulator at lead times from hourly to daily and with different ocean forcings. Forcing with surface currents leads to instabilities, probably because the sea-ice fields already contain information on the ocean state. In contrast, forcing with sub-surface currents, sea surface height, temperature and salinity greatly improves stability and skill for sea-ice volume, concentration, drift and snow thickness. The 6-hourly emulator gives the best balance between accuracy and stability, and outperforms emulators forced by the atmosphere alone. It remains stable over several years and reproduces the seasonal cycle, the large-scale drift and the Fram Strait export, with skill against satellite sea-ice concentration close to that of the physical model itself. However, the emulator responds differently when forced by another atmospheric reanalysis, especially for sea-ice drift. Finally, I will discuss what is needed to use such emulators in coupled prediction systems, from short-term forecasts to climate projections.",
+  "bio": "Charlotte Durand obtained her Ph.D. at Ecole des Ponts ParisTech in 2024, supervised by Marc Bocquet, on deep learning, data assimilation and sea-ice dynamics. During her Ph.D., she developed neural network emulators of high-resolution sea-ice thickness in the Arctic, and showed how they can be used in four-dimensional variational data assimilation. Since 2025, she has been a postdoctoral researcher at the Institut des Geosciences de l'Environnement (IGE), working with Pierre Rampal on sea-ice emulators that can be coupled to ocean models, as part of the Scale-Aware Sea Ice Project (SASIP) project. Her work aims to make these emulators stable and skillful enough to become components of future hybrid prediction systems, for short-term forecasting and climate applications.",
   "link": "https://scholar.google.com/citations?hl=en&user=Z466TOcAAAAJ&view_op=list_works&sortby=pubdate",
+  "relatedPapers": [
+    {
+      "label": "Ocean-Aware Sea-ice Emulator for Future Hybrid Coupled Prediction Systems",
+      "url": "https://doi.org/10.22541/essoar.15007260/v1"
+    },
+    {
+      "label": "Learning-Based Methods and the Future of Numerical Ocean and Sea-Ice Modeling",
+      "url": "https://doi.org/10.1146/annurev-marine-040125-074353"
+    }
+  ],
+  "photo": "charlotte-durand.jpg",
   "announced": true
 }
