@@ -18,8 +18,8 @@ Then open http://localhost:4321/drakkar2027
 | Content | Location |
 | --- | --- |
 | Dates, venue, links, committees, intro text | `src/config.ts` |
-| Program (one file per day) | `src/content/program/*.json` |
-| Keynote speakers | `src/content/keynotes/*.json` |
+| Program (one file per day; keynote slots derive their speaker, title and abstract from the keynote files) | `src/content/program/*.json` |
+| Keynote speakers (talk title, abstract, bio, related papers) | `src/content/keynotes/*.json` |
 | Poster list (one file per poster; abstract as the body) | `src/content/posters/*.md` |
 | Practical information | `src/pages/practical.astro` |
 

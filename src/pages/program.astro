@@ -8,6 +8,13 @@ import { nav } from "../utils";
 
 const days = (await getCollection("program")).sort((a, b) => a.data.date.localeCompare(b.data.date));
 
+const keynotes = await getCollection("keynotes", ({ data }) => data.announced);
+
+const keynoteFor = (dayId: string, time: string) =>
+  keynotes.find(
+    (k) => k.data.day === Number(dayId.replace(/^day-/, "")) && k.data.time === time
+  );
+
 const kindStyles: Record<string, { chip: string; label: string }> = {
   registration: { chip: "bg-slate-100 text-slate-600", label: "Registration" },
   welcome: { chip: "bg-ocean-100 text-ocean-800", label: "Welcome" },
@@ -94,7 +101,18 @@ const descriptionBlocks = (text: string) => {
             <span class="text-sm text-slate-500">{prettyDate(day.data.date)}</span>
           </div>
           <div class="mt-5 space-y-3">
-            {day.data.slots.map((slot) => (
+            {day.data.slots.map((slot) => {
+              const keynote = slot.kind === "keynote" ? keynoteFor(day.id, slot.time) : undefined;
+              const title = keynote ? `${slot.title}: ${keynote.data.speaker}` : slot.title;
+              const people = keynote ? keynote.data.affiliation : slot.people;
+              const details = [
+                keynote?.data.talkTitle ? `**${keynote.data.talkTitle}**` : undefined,
+                keynote?.data.abstract,
+                slot.description,
+              ]
+                .filter(Boolean)
+                .join("\n");
+              return (
               <div class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:shadow-md">
                 <div class="w-24 shrink-0 text-right">
                   <div class="text-sm font-bold text-ocean-700">{slot.time}</div>
@@ -105,14 +123,14 @@ const descriptionBlocks = (text: string) => {
                     <span class={`rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide ${kindStyles[slot.kind]?.chip ?? kindStyles.other.chip}`}>
                       {kindStyles[slot.kind]?.label ?? "Session"}
                     </span>
-                    <h3 class="font-semibold text-slate-900">{slot.title}</h3>
+                    <h3 class="font-semibold text-slate-900">{title}</h3>
                   </div>
-                  {slot.people && <p class="mt-1 text-sm text-slate-500">{slot.people}</p>}
-                  {slot.description && (
+                  {people && <p class="mt-1 text-sm text-slate-500">{people}</p>}
+                  {details && (
                     <details class="mt-2 text-sm text-slate-600">
                       <summary class="cursor-pointer font-medium text-ocean-600 hover:text-ocean-800">Details</summary>
                       <div class="mt-2 space-y-2">
-                        {descriptionBlocks(slot.description).map((block) =>
+                        {descriptionBlocks(details).map((block) =>
                           block.type === "list" ? (
                             <ul class="list-disc space-y-1 pl-5">
                               {block.items.map((item) => (
@@ -126,9 +144,18 @@ const descriptionBlocks = (text: string) => {
                       </div>
                     </details>
                   )}
+                  {keynote && (
+                    <a
+                      href={nav(`keynotes#${keynote.id}`)}
+                      class="mt-2 inline-block text-sm font-medium text-ocean-600 hover:underline"
+                    >
+                      Speaker details &rarr;
+                    </a>
+                  )}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       ))
