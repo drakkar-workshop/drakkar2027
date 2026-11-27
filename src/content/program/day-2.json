@@ -21,7 +21,8 @@
       "endTime": "11:30",
       "title": "Plenary discussion: Agentic AI for ocean modelling",
       "kind": "discussion",
-      "people": "Chairs: Julien Le Sommer and Andrew Shao (tbc)"
+      "people": "Chairs: Julien Le Sommer and Andrew Shao (tbc)",
+      "description": "Like many fields of science, computational oceanography is being reshaped by the possibilities opened up by Large Language Models (LLMs) and agentic AI. Over the past year, we have seen agents used to develop and maintain ocean-model codebases, to set up and run simulation campaigns, and to steer the analysis of their outputs. In this session — introduced by the chairs, followed by an open discussion — we will reflect on the nature and potential of these innovations for our field, and discuss their implications in terms of ethics, environmental footprint and community building. Participants are encouraged to share their own experiences and expectations."
     },
     {
       "time": "11:30",

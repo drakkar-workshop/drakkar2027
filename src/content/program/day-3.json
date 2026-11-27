@@ -13,15 +13,16 @@
       "endTime": "10:45",
       "title": "Hands-on session: NEMO cookbook",
       "kind": "hands-on",
-      "people": "Organizer: Oliver Tooth",
-      "description": "Getting Started with NEMO Cookbook: Reproducible, Grid-Aware Analysis of NEMO Outputs. Session details will be announced."
+      "people": "Organizers: Oliver Tooth and Adam Blaker",
+      "description": "**Getting Started with NEMO Cookbook: Reproducible, Grid-Aware Analysis of NEMO Outputs**\nNEMO Cookbook is an open-source Python library that extends the familiar xarray data model with grid-aware data structures for reproducible analysis of NEMO ocean general circulation model outputs.\nIn this hands-on session, we'll introduce the NEMODataTree, which organises NEMO outputs stored in local NetCDF files or cloud-native formats (e.g., Zarr and Icechunk) into a single structure that understands the model grid. We'll then show how NEMODataArrays enable grid-aware computations, such as differentiation and integration, alongside coordinate transformations, masked & binned statistics, and geographical plotting. Finally, we'll demonstrate how to chain these operations into reproducible analysis recipes, such as calculating ocean heat transports, mixed layer heat content and the strength of the meridional overturning circulation.\nWhether you're new to Python or an experienced xarray user, this session is designed to support all levels of experience, and participants are encouraged to follow along using hands-on Jupyter notebooks."
     },
     {
       "time": "10:45",
       "endTime": "11:30",
       "title": "Plenary discussion: Ocean model forcing and spin-up strategies",
       "kind": "discussion",
-      "people": "Chairs: Gokhan Danabasoglu and Anne-Marie Treguier"
+      "people": "Chairs: Gokhan Danabasoglu, Anne-Marie Treguier and Arne Biastoch",
+      "description": "This discussion will be introduced by a presentation of C-FORCE, a new ECMWF-based forcing (Gokhan Danabasoglu), followed by an introduction to spin-up strategies. We will discuss pros and cons of different spin-up strategies that may be realized in future phases of OMIP, and discuss the potential role of DRAKKAR in OMIP."
     },
     {
       "time": "11:30",
